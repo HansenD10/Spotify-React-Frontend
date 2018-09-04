@@ -1,21 +1,35 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import qs from 'query-string'
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      access_token: null,
+      user_data: {}
+    }
+  }
+
+  validateUser = () => {
+    let parsed = qs.parse(window.location.search)
+    if (parsed['access_token']) 
+      this.setState({access_token: parsed['access_token']})
+    else
+      window.location.replace('http://localhost:8080/login')
+  }
+
+  
+  componentWillMount() {
+    this.validateUser()
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        
       </div>
     );
   }
 }
 
-export default App;
+export default App
