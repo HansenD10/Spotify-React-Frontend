@@ -1,0 +1,10 @@
+.nav-wrapper {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: #1F2833;
+  color: #66FCF1;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
