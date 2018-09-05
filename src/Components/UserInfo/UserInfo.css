@@ -1,6 +1,9 @@
 .user-nav-info {
   display: flex;
   flex-direction: row;
+  height: fit-content;
+  margin: auto 0;
+  cursor: pointer;
 }
 
 .user-nav-info p {

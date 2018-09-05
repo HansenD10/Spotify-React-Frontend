@@ -8,10 +8,11 @@ export default class UserInfo extends Component {
       backgroundImage: `url(${imgUrl})`,
       backgroundSize: 'contain',
       backgroundRepeat: 'no-repeat',
-      height: '3vw',
-      width: '3vw',
+      height: '3rem',
+      width: '3rem',
       borderRadius: '50%',
-      border: '2px solid #66FCF1'
+      border: '2px solid #66FCF1',
+      margin: 'auto 0'
     }
 
     return (
