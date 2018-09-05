@@ -30,6 +30,7 @@ class App extends Component {
       console.log(data)
       this.setState({
         user_data: {
+          ...this.state.user_data,
           name: data.display_name,
           href: data.href,
           image: data.images[0].url || null
@@ -43,8 +44,22 @@ class App extends Component {
       headers: {
         'Authorization': 'Bearer ' + access_token
       }
-    }).then((data) => {
-      console.log(data)
+    }).then(({data}) => {
+      //Create playlist state with only neccessary items
+      let playlists = data.items.map((item) => {
+        return {
+          name: item.name,
+          image: item.images[0].url || null,
+          href: item.href
+        }
+      })
+      //Set playlist state
+      this.setState({
+        user_data: {
+          ...this.state.user_data,
+          playlists
+        }
+      })
     })
   }
 
@@ -63,7 +78,7 @@ class App extends Component {
     return (
       <div className="app">
         <NavBar name={user_data.name} imgUrl={user_data.image}/>
-        <PlaylistDrawer />
+        <PlaylistDrawer playlists={user_data.playlists}/>
       </div>
     );
   }

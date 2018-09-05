@@ -1,5 +1,26 @@
 .drawer-wrapper {
+  color: white;
+  text-align: center;
   width: 300px;
-  height: 100%;
+  height: 100vh;
+  padding: 90px 0;
   background-color: #1F2833;
+  overflow: auto;
+}
+
+.playlist-wrapper {
+  margin: 20px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  width: 80%;
+}
+
+.playlist-icon {
+  height: 50px;
+  width: 50px;
+}
+
+.playlist-name {
+  margin: auto 10px;
 }
