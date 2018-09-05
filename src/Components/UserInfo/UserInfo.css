@@ -1,0 +1,9 @@
+.user-nav-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.user-nav-info p {
+  margin-left: 5px;
+  font-weight: 700;
+}

@@ -46,9 +46,11 @@ class App extends Component {
   }
 
   render() {
+    let { user_data } = this.state
+
     return (
       <div>
-        <NavBar />
+        <NavBar name={user_data.name} imgUrl={user_data.image}/>
       </div>
     );
   }
